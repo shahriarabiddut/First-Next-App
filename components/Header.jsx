@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { FaBars } from "react-icons/fa";
 
 export default function Header({ title }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,24 +52,7 @@ export default function Header({ title }) {
             aria-label="Toggle Menu"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen == true ? (
-              "X"
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            )}
+            {isOpen == true ? "X" : <FaBars />}
           </button>
         </div>
         {isOpen && (
@@ -77,23 +61,27 @@ export default function Header({ title }) {
               <Link
                 href="/"
                 className="block w-full text-center px-4 py-2 hover:bg-white hover:text-indigo-600 rounded-lg transition duration-300"
+                onClick={() => setIsOpen(!isOpen)}
               >
                 Home
               </Link>
               <Link
                 href="/about"
+                onClick={() => setIsOpen(!isOpen)}
                 className="block w-full text-center px-4 py-2 hover:bg-white hover:text-indigo-600 rounded-lg transition duration-300"
               >
                 About
               </Link>
               <Link
                 href="/blogs"
+                onClick={() => setIsOpen(!isOpen)}
                 className="block w-full text-center px-4 py-2 hover:bg-white hover:text-indigo-600 rounded-lg transition duration-300"
               >
                 Blogs
               </Link>
               <Link
                 href="/posts"
+                onClick={() => setIsOpen(!isOpen)}
                 className="block w-full text-center px-4 py-2 hover:bg-white hover:text-indigo-600 rounded-lg transition duration-300"
               >
                 Posts
