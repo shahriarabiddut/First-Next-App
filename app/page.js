@@ -1,101 +1,78 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="min-h-screen bg-gradient-to-r from-blue-500 to-indigo-700 text-white">
+      
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      <section className="flex items-center justify-center min-h-[70vh] text-center px-4">
+        <div>
+          <h2 className="text-6xl font-extrabold mb-6">
+            Welcome to <span className="text-yellow-300">Next.js</span>
+          </h2>
+          <p className="text-lg mb-8">
+            Next.js is a React framework that enables you to build fast, scalable, and SEO-friendly web applications with ease.
+          </p>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://nextjs.org/docs"
             target="_blank"
             rel="noopener noreferrer"
+            className="bg-yellow-400 text-indigo-800 px-6 py-3 rounded-lg text-lg font-medium shadow-lg hover:bg-yellow-500 transition duration-300"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            Read the Docs
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section id="about" className="py-16 bg-white text-indigo-700 flex justify-center items-center">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-8">About Next.js</h2>
+          <p className="text-lg leading-relaxed text-center">
+            Next.js is a powerful framework for building server-rendered React applications. It provides features like:
+          </p>
+          <ul className="mt-6 space-y-3 text-center">
+            <li>⚡ Fast Rendering with Server-Side Rendering (SSR)</li>
+            <li>🚀 Static Site Generation (SSG)</li>
+            <li>🔍 SEO Optimization</li>
+            <li>📦 Built-in API Routes</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="features" className="py-16 text-center bg-gradient-to-b from-indigo-700 to-indigo-900 min-h-[80vh] flex justify-center items-center">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-8">Why Use Next.js?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 bg-gray-100 text-black rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold mb-4">Server-Side Rendering</h3>
+              <p>Deliver pages faster by pre-rendering content on the server.</p>
+            </div>
+            <div className="p-6 bg-gray-100 text-black rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold mb-4">API Routes</h3>
+              <p>Create backend APIs without leaving your Next.js app.</p>
+            </div>
+            <div className="p-6 bg-gray-100 text-black rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold mb-4">Static Generation</h3>
+              <p>Pre-build pages for better performance and scalability.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="get-started" className="py-16 bg-yellow-400 text-indigo-800 flex justify-center items-center">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-6">Get Started with Next.js</h2>
+          <p className="text-lg mb-6">
+            Ready to dive into Next.js? Follow these simple steps to create your first project.
+          </p>
+          <ol className="text-left mx-auto max-w-2xl space-y-4 list-decimal px-6">
+            <li>Install Next.js: <code className="bg-gray-100 px-2 py-1 rounded">npx create-next-app@latest my-app</code></li>
+            <li>Navigate to your project: <code className="bg-gray-100 px-2 py-1 rounded">cd my-app</code></li>
+            <li>Start the development server: <code className="bg-gray-100 px-2 py-1 rounded">npm run dev</code></li>
+            <li>Build your pages and explore the features!</li>
+          </ol>
+        </div>
+      </section>
+
+      
+    </main>
   );
 }
