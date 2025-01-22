@@ -1,15 +1,17 @@
+import BlogSection from "@/components/BlogSection";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-r from-blue-500 to-indigo-700 text-white">
-      
-
-      <section className="flex items-center justify-center min-h-[70vh] text-center px-4">
+      <section className="flex items-center justify-center min-h-[80vh] text-center px-4">
         <div>
           <h2 className="text-6xl font-extrabold mb-6">
-            Welcome to <span className="text-yellow-300">Next.js</span>
+            Welcome to <span className="text-yellow-300">Next.js </span> Fake
+            Blog!
           </h2>
           <p className="text-lg mb-8">
-            Next.js is a React framework that enables you to build fast, scalable, and SEO-friendly web applications with ease.
+            Next.js is a React framework that enables you to build fast,
+            scalable, and SEO-friendly web applications with ease.
           </p>
           <a
             href="https://nextjs.org/docs"
@@ -22,9 +24,7 @@ export default function Home() {
         </div>
       </section>
 
-      
-
-      
+      <BlogSection />
     </main>
   );
 }

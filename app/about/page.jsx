@@ -12,7 +12,7 @@ const AboutPage = () => {
     <>
       <section
         id="about"
-        className="py-16 bg-white text-indigo-500 flex justify-center items-center"
+        className="py-16 bg-[#F2EFE7] text-indigo-500 flex justify-center items-center"
       >
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-8">About Next.js</h2>
@@ -30,7 +30,7 @@ const AboutPage = () => {
       </section>
       <section
         id="features"
-        className="py-16 text-center bg-gradient-to-b from-indigo-700 to-indigo-900 min-h-[80vh] flex justify-center items-center"
+        className="py-16 text-center bg-[#9ACBD0] min-h-[80vh] flex justify-center items-center"
       >
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-8 text-white">
@@ -55,8 +55,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="min-h-screen  text-gray-800 py-12 px-6">
-        <h2 className="text-4xl font-bold mb-8 text-indigo-700 text-center">
+      <section className="min-h-screen bg-[#48A6A7] text-gray-800 py-12 px-6">
+        <h2 className="text-4xl font-bold mb-8 text-white text-center">
           Key Features
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto">
@@ -108,7 +108,7 @@ const AboutPage = () => {
       </section>
       <section
         id="get-started"
-        className="py-16 bg-yellow-300 text-indigo-800 flex justify-center items-center"
+        className="py-16 bg-[#2973B2] text-white flex justify-center items-center"
       >
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">Get Started with Next.js</h2>
@@ -119,17 +119,17 @@ const AboutPage = () => {
           <ol className="text-left mx-auto max-w-2xl space-y-4 list-decimal px-6">
             <li>
               Install Next.js:{" "}
-              <code className="bg-gray-100 px-2 py-1 rounded">
+              <code className="bg-gray-500 px-2 py-1 rounded">
                 npx create-next-app@latest my-app
               </code>
             </li>
             <li>
               Navigate to your project:{" "}
-              <code className="bg-gray-100 px-2 py-1 rounded">cd my-app</code>
+              <code className="bg-gray-500 px-2 py-1 rounded">cd my-app</code>
             </li>
             <li>
               Start the development server:{" "}
-              <code className="bg-gray-100 px-2 py-1 rounded">npm run dev</code>
+              <code className="bg-gray-500 px-2 py-1 rounded">npm run dev</code>
             </li>
             <li>Build your pages and explore the features!</li>
           </ol>

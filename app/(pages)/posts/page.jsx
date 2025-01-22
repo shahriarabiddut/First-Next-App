@@ -2,7 +2,7 @@ import { getAllPosts } from "@/lib/Posts";
 import Link from "next/link";
 
 export default async function page() {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts(100);
   //   console.log(posts);
   return (
     <div className="min-h-screen">
