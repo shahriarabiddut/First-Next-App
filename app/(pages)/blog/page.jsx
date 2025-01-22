@@ -5,15 +5,17 @@ export default async function page() {
   const posts = await getAllPosts(100);
   //   console.log(posts);
   return (
-    <div className="min-h-screen">
-      <h1 className="text-4xl text-center my-4">All Posts</h1>
+    <div className="min-h-screen py-12">
+      <h1 className="text-4xl text-center my-4 text-indigo-700 font-bold">
+        All Posts
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {posts.map((post, index) => (
           <div
             key={index}
             className="p-5 bg-white text-black rounded-lg  my-2 mx-1"
           >
-            <Link href={`/posts/${post.id}`}>
+            <Link href={`/blog/${post.id}`}>
               <h2 className="text-left text-2xl py-3 text-blue-700 capitalize">
                 {post.title}
               </h2>

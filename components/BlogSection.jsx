@@ -12,6 +12,11 @@ export default async function BlogSection() {
         <Sidebar />
       </div>
       <div className="col-span-1 md:col-span-2 bg-gray-200 p-2 space-y-2">
+        <div className="flex justify-center">
+          <h1 className="text-4xl text-center my-4 text-gray-700 font-bold">
+            Recent Posts
+          </h1>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
           {posts.map((post, index) => (
             <BlogCard key={index} blog={post} />
@@ -19,7 +24,7 @@ export default async function BlogSection() {
         </div>
         <div className="flex">
           <Link
-            href="/posts/"
+            href="/blog/"
             className="btn text-center w-full font-bold bg-indigo-500 text-white py-2 rounded-lg mt-2 hover:bg-indigo-600 transition duration-300"
           >
             All Posts

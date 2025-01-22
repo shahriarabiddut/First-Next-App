@@ -16,11 +16,8 @@ export default function Header({ title }) {
       <Link href="/about" onClick={() => setIsOpen(false)} className={linkCss}>
         About
       </Link>
-      {/* <Link href="/blogs" onClick={() => setIsOpen(false)} className={linkCss}>
+      <Link href="/blog" onClick={() => setIsOpen(false)} className={linkCss}>
         Blogs
-      </Link> */}
-      <Link href="/posts" onClick={() => setIsOpen(false)} className={linkCss}>
-        Posts
       </Link>
     </>
   );
@@ -44,7 +41,7 @@ export default function Header({ title }) {
           <button
             className="text-white focus:outline-none"
             aria-label="Toggle Menu"
-            onClick={() => setIsOpen(false)}
+            onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen == true ? "X" : <FaBars />}
           </button>
