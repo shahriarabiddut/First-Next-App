@@ -4,9 +4,12 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 export async function generateMetadata({ params }) {
-  const { id } = await params; // Fixed destructuring
-  const post = await getPost(id);
-  if (!post) {
+  const { id } = await params;
+  const result = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${id}`
+  );
+  const post = await result.json();
+  if (!result.ok) {
     notFound();
   }
   return {
@@ -17,12 +20,11 @@ export async function generateMetadata({ params }) {
 
 const Post = async ({ params }) => {
   const { id } = await params; // Fixed destructuring
-  const postPromise = getPost(id);
-
-  // const commentsPromise = getPostComments(id);
-
-  const post = await postPromise;
-  if (!post) {
+  const result = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${id}`
+  );
+  const post = await result.json();
+  if (!result.ok) {
     notFound();
   }
 
