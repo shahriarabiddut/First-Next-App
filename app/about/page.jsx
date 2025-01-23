@@ -1,6 +1,4 @@
 import FeatureCard from "@/components/FeatureCard";
-import image from "@/public/404.png";
-import Image from "next/image";
 
 export const metadata = {
   title: "About Us | First Next App",

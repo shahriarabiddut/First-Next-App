@@ -19,7 +19,7 @@ const Post = async ({ params }) => {
   const { id } = await params; // Fixed destructuring
   const postPromise = getPost(id);
 
-  const commentsPromise = getPostComments(id);
+  // const commentsPromise = getPostComments(id);
 
   const post = await postPromise;
   if (!post) {
@@ -35,11 +35,11 @@ const Post = async ({ params }) => {
         <p className="text-gray-800 text-lg leading-relaxed">{post.body}</p>
       </article>
       <section className="mt-8">
-        <Suspense
+        {/* <Suspense
           fallback={<p className="text-gray-500">Loading Comments...</p>}
         >
           <Comments promise={commentsPromise} />
-        </Suspense>
+        </Suspense> */}
       </section>
     </main>
   );
