@@ -1,13 +1,16 @@
 "use client";
+import { LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs";
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 
-export default function Header({ title }) {
+export default function Header({ title, isAuthenticated }) {
   const [isOpen, setIsOpen] = useState(false);
+
   const linkCss = `${
-    isOpen && "block w-full text-center"
+    isOpen ? "block w-full text-center" : ""
   } px-4 py-2 hover:bg-white hover:text-indigo-600 rounded-lg transition duration-300`;
+
   const links = (
     <>
       <Link href="/" className={linkCss} onClick={() => setIsOpen(false)}>
@@ -19,12 +22,26 @@ export default function Header({ title }) {
       <Link href="/blog" onClick={() => setIsOpen(false)} className={linkCss}>
         Blogs
       </Link>
+      {!isAuthenticated ? (
+        <LoginLink>Sign in</LoginLink>
+      ) : (
+        <>
+          <Link
+            href="/profile"
+            onClick={() => setIsOpen(false)}
+            className={linkCss}
+          >
+            Profile
+          </Link>
+          <LogoutLink>Log out</LogoutLink>
+        </>
+      )}
     </>
   );
+
   return (
     <nav className="bg-gradient-to-r from-blue-300 to-indigo-500 text-white shadow-md fixed w-full">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
         <div className="text-2xl font-bold">
           <Link href="/">
             <span className="cursor-pointer hover:text-yellow-300 transition duration-300">
@@ -33,17 +50,17 @@ export default function Header({ title }) {
           </Link>
         </div>
 
-        {/* Navigation Menu */}
-        <div className="hidden md:flex space-x-6">{links}</div>
+        <div className="hidden md:flex space-x-6 md:justify-center md:items-center">
+          {links}
+        </div>
 
-        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
             className="text-white focus:outline-none"
             aria-label="Toggle Menu"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen == true ? "X" : <FaBars />}
+            {isOpen ? "X" : <FaBars />}
           </button>
         </div>
         {isOpen && (
