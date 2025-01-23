@@ -49,10 +49,10 @@ const Post = async ({ params }) => {
 
 export default Post;
 
-// Converts Dynamic Routes to Static Routes (SSG)
-export async function generateStaticParams() {
-  const posts = await getAllPosts();
-  return posts.map((post) => ({
-    id: post.id.toString(),
-  }));
-}
+// // Converts Dynamic Routes to Static Routes (SSG)
+// export async function generateStaticParams() {
+//   const posts = await getAllPosts();
+//   return posts.map((post) => ({
+//     id: post.id.toString(),
+//   }));
+// }
