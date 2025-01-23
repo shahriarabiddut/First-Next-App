@@ -1,15 +1,12 @@
 import Comments from "@/components/Comments";
-import { getAllPosts, getPost, getPostComments } from "@/lib/Posts";
+import { getPost, getPostComments } from "@/lib/Posts";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 export async function generateMetadata({ params }) {
-  const { id } = await params;
-  const result = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`
-  );
-  const post = await result.json();
-  if (!result.ok) {
+  const { id } = await params; // Fixed destructuring
+  const post = await getPost(id);
+  if (!post) {
     notFound();
   }
   return {
@@ -20,11 +17,12 @@ export async function generateMetadata({ params }) {
 
 const Post = async ({ params }) => {
   const { id } = await params; // Fixed destructuring
-  const result = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`
-  );
-  const post = await result.json();
-  if (!result.ok) {
+  const postPromise = getPost(id);
+
+  const commentsPromise = getPostComments(id);
+
+  const post = await postPromise;
+  if (!post) {
     notFound();
   }
 
@@ -37,11 +35,11 @@ const Post = async ({ params }) => {
         <p className="text-gray-800 text-lg leading-relaxed">{post.body}</p>
       </article>
       <section className="mt-8">
-        {/* <Suspense
+        <Suspense
           fallback={<p className="text-gray-500">Loading Comments...</p>}
         >
           <Comments promise={commentsPromise} />
-        </Suspense> */}
+        </Suspense>
       </section>
     </main>
   );
